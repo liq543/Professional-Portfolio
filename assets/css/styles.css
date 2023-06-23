@@ -1,4 +1,10 @@
 /* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,8 +18,9 @@ h1, h2 {
 
 #oval {
   display: block;
-  margin: 0 auto;
   border-radius: 50%;
+  border: 1px solid black;
+  left: 0px;
 }
 
 a {
@@ -96,7 +103,7 @@ footer {
 
 .centertxt {
   text-align:center;
-  left:5%;
+  padding-top: 10px;
 }
 
 #nyan-cat {
@@ -168,6 +175,11 @@ nav ul li:last-child a:hover {
   border-radius: 10px;
 }
 
+#about h1 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
 #contact h2 {
   text-align: center;
 }
@@ -188,11 +200,13 @@ nav ul li:last-child a:hover {
 }
 #portfolio h2{
   text-align:center;
+  padding-bottom: 20px;
 }
 .carousel {
   display: flex;
-  overflow: scroll;
+  overflow: visible;
   position:relative;
+  align-items: flex-start;
   justify-content:center;
   width: 100%;
   scroll-snap-type: x mandatory;
@@ -204,8 +218,11 @@ nav ul li:last-child a:hover {
 }
 
 .carousel-item {
+  border-radius: 10px;  
+  overflow: hidden;
   flex: 0 0 auto;
   margin-right: 20px;
+  max-width: 100%;
   position: relative;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -213,18 +230,9 @@ nav ul li:last-child a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-item {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  position: relative;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  transition: all 0.5s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
 .carousel-item img {
   width: 100%;
+  vertical-align: top;
   height: 400px;
   object-fit: cover;
   transition: opacity 0.5s;
@@ -255,8 +263,7 @@ nav ul li:last-child a:hover {
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s;
-  border-radius: 15px; /* Add roundness to the caption */
-  font-family: 'Georgia', serif; /* Change the font to something fancier */
-  text-shadow: 2px 2px #000; /* Add a shadow to make the text stand out */
+  border-radius: 15px; 
+  font-family: 'Georgia', serif; 
+  text-shadow: 2px 2px #000;
 }
-
