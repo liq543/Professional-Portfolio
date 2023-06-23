@@ -1,8 +1,8 @@
-document.querySelectorAll('#menu a').forEach(link => {
-  link.addEventListener('click', function(e) {
+// Scrolling effect redone
+$(document).ready(function() {
+  $('#menu a').click(function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    $('html, body').animate({
+      scrollTop: $(this.hash).offset().top
+    }, 800);
   });
-});
