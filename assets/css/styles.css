@@ -10,6 +10,12 @@ h1, h2 {
   color: #333;
 }
 
+#oval {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -90,4 +96,12 @@ footer {
 .centertxt {
   text-align:center;
   left:5%;
+}
+
+#nyan-cat {
+  position: absolute;
+  top: 0;
+  left: -771px;  /* assuming the width of nyan.png is less than 150px */
+  display: none;
+  z-index: 9999;
 }
