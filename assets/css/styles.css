@@ -108,7 +108,7 @@ footer {
 
 #nyan-cat {
   position: absolute;
-  top: 0;
+  top: 50px;
   max-width: 5%;
   max-height: 5%;
   left: -150px;
@@ -142,6 +142,17 @@ nav ul li:last-child a:hover {
   100% {color: red;}
 }
 
+@keyframes rainbow2 {
+  0% {background: red;}
+  14% {background: orange;}
+  28% {background: yellow;}
+  42% {background: lime;}
+  57% {background: blue;}
+  71% {background: indigo;}
+  85% {background: violet;}
+  100% {background: red;}
+}
+
 @keyframes wave {
   0%, 50%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(-10deg); }
@@ -150,10 +161,10 @@ nav ul li:last-child a:hover {
 
 .nyan-cat {
   position: fixed;
-  top: 0;
+  top: -10px;
   left: -15px;
-  max-width: 5%;
-  max-height: 5%;
+  max-width: 4%;
+  max-height: 4%;
   z-index: 9999;
 }
 
@@ -266,4 +277,8 @@ nav ul li:last-child a:hover {
   border-radius: 15px; 
   font-family: 'Georgia', serif; 
   text-shadow: 2px 2px #000;
+}
+
+.header-rainbow {
+  animation: rainbow2 1s linear infinite;
 }

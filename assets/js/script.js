@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     var nyanSong = new Audio('./assets/audio/nyan.mp3');
+    var header = document.querySelector('header');
     var nyanCount = 0;
     var finishedNyanCount = 0;
     var nyanCounter = document.getElementById('nyan-counter');
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (nyanCount === 0) {
             nyanSong.play();
             nyanCounter.style.opacity = 1;
+            header.classList.add('header-rainbow');
         }
         nyanCount++;
     
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     nyanSong.pause();
                     nyanSong.currentTime = 0;
                     nyanCounter.style.opacity = 0;
+                    header.classList.remove('header-rainbow');
                 }
             } else {
                 pos++;
@@ -37,4 +40,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         }
     });
-});    
+});
