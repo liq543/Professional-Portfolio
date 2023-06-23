@@ -213,24 +213,27 @@ nav ul li:last-child a:hover {
   text-align:center;
   padding-bottom: 20px;
 }
+
 .carousel {
   display: flex;
-  overflow: visible;
-  position:relative;
-  align-items: flex-start;
-  justify-content:center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: center;
   width: 100%;
-  scroll-snap-type: x mandatory;
+  height: 450px;
+  padding: 25px 0;
 }
 
 .carousel-item a {
   display: block;
   position: relative;
-}
+  border-radius: 10px;
+  overflow: hidden;
+} 
 
 .carousel-item {
   border-radius: 10px;  
-  overflow: hidden;
+  overflow: visible;
   flex: 0 0 auto;
   margin-right: 20px;
   max-width: 100%;
@@ -280,5 +283,6 @@ nav ul li:last-child a:hover {
 }
 
 .header-rainbow {
+
   animation: rainbow2 1s linear infinite;
 }
