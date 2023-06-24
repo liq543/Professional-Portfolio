@@ -5,14 +5,15 @@
         var finishedNyanCount = 0;
         var nyanCounter = document.getElementById('nyan-counter');
         
-        document.getElementById('nyan-button').addEventListener('click', function() {
+        document.getElementById('nyan-button').addEventListener('click', function(event) {
+            event.preventDefault();
             var nyanCat = document.createElement('div');
             nyanCat.classList.add('nyan-cat');
             nyanCat.innerHTML = '<img src="./assets/img/nyan.png" alt="Nyan Cat" />';
             document.body.appendChild(nyanCat);
         
-            var pos = -150;  // starting position (should match the CSS)
-            var id = setInterval(frame, 5);  // change the speed of the animation by changing the second parameter
+            var pos = -150;
+            var id = setInterval(frame, 5);
         
             if (nyanCount === 0) {
                 nyanSong.play();
@@ -46,19 +47,19 @@
         var navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(function(link) {
           link.addEventListener('click', function(e) {
-            e.preventDefault();
+            // Check if the clicked link is not the nyan-button
+            if (this.getAttribute('id') !== 'nyan-button') {
+              e.preventDefault();
       
-            // Remove .active class from all sections
-            document.querySelectorAll('#portfolio, #about, #contact').forEach(function(section) {
-              section.classList.remove('active');
-            });
+              document.querySelectorAll('#portfolio, #about, #contact').forEach(function(section) {
+                section.classList.remove('active');
+              });
       
-            // Add .active class to the clicked section
-            var targetSection = document.querySelector(this.getAttribute('href'));
-            targetSection.classList.add('active');
+              var targetSection = document.querySelector(this.getAttribute('href'));
+              targetSection.classList.add('active');
+            }
           });
         });
-      
-        // Make Portfolio the default screen
+    
         document.querySelector('#portfolio').classList.add('active');
-      });
+    });
