@@ -9,7 +9,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5e4cc; /* Earthy tone background color */
+  background-color: #f5e4cc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body, html {
+  height:100%;
 }
 
 h1, h2 {
@@ -32,7 +39,7 @@ a {
 header {
   background-color: #d9c5a1;
   padding: 10px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 100;
@@ -51,7 +58,7 @@ nav ul li {
 
 /* Main content styles */
 main {
-  margin-top: 0px; /* to push the content below the fixed header */
+  flex: 1 0 auto;
   padding: 20px;
 }
 
@@ -88,6 +95,8 @@ footer {
   background-color: #d9c5a1;
   padding: 10px;
   text-align: center;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Text and image center */
@@ -228,26 +237,30 @@ nav ul li:last-child a:hover {
 
 .carousel {
   display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: auto;
   align-items: center;
-  width: 100%;
-  height: 450px;
+  height: calc(100%-60px);
   padding: 25px 0;
+  flex-wrap: wrap;
+  justify-content: center; 
 }
 
 .carousel-item a {
   display: block;
-  position: relative;
-  border-radius: 10px;
   overflow: hidden;
+  width: calc(33.33% -40px);
+  position: relative;
+  height:  calc(33.33%-40px);
+  border-radius: 10px;
 } 
 
 .carousel-item {
   border-radius: 10px;  
   overflow: visible;
+  width: calc(33.33% - 40px);
   flex: 0 0 auto;
   margin-right: 20px;
+  margin-bottom: 20px;
   max-width: 100%;
   position: relative;
   scroll-snap-align: start;
@@ -297,4 +310,13 @@ nav ul li:last-child a:hover {
 .header-rainbow {
 
   animation: rainbow2 1s linear infinite;
+}
+
+#portfolio, #about, #contact {
+  display: none;
+  overflow: auto;
+}
+
+#portfolio.active, #about.active, #contact.active {
+  display: block;
 }
